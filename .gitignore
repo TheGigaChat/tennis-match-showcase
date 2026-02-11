@@ -1,0 +1,39 @@
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+*.log
+.idea/
+.project
+.classpath
+
+# Node / Next.js
+node_modules/
+.next/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Env
+backend/.env.local
+
+# idea
+.idea
+
+### VS Code ###
+.vscode/
+
+# AI
+.claude/
+
+# Showcase
+.env
+.env.*
+/build
+/dist
+target/
