@@ -33,7 +33,6 @@ backend/.env.local
 
 # Showcase
 .env
-.env.*
 /build
 /dist
 target/

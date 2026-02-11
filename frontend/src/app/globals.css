@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ===== Project tokens ===== */
+:root {
+  /* Colors */
+  --bg: #FFFCF3;
+  --main: #0E5628;
+  --main-dark: #0B3F1E;
+  --main-light: #4BA12C;
+  --main-text: #03140C;
+  --neutral: #4D4D4D;
+  --neutral-light: #C5C5C5;
+  --contrast: #D93333;
+  --error: #D93333;
+
+  /* Layout */
+  --radius: 16px;      /* rounded-xl */
+  --container: 390px;  /* phone cap */
+  --nav-height: calc(66px + 12px + 12px);
+
+  /* Profile page tokens */
+  --profile-bg-gradient: radial-gradient(900px 600px at 15% 120%, rgba(12,88,64,0.22), transparent 62%),
+    radial-gradient(900px 600px at 110% 30%, rgba(30,85,120,0.18), transparent 60%),
+    linear-gradient(180deg, #FFFCF3 0%, #F4F6F1 60%, #EEF2EA 100%);
+  --profile-bg-blob-1: radial-gradient(circle at 30% 30%, rgba(10,68,44,0.24), transparent 60%);
+  --profile-bg-blob-2: radial-gradient(circle at 70% 30%, rgba(24,98,132,0.18), transparent 60%);
+
+  --profile-header-text: #0A3A23;
+  --profile-header-pill-bg: rgba(255, 255, 255, 0.7);
+  --profile-header-pill-shadow: 0 8px 18px -12px rgba(5, 35, 20, 0.45);
+
+  --profile-card-surface: #F7F8F4;
+  --profile-card-border: #D9E2D7;
+  --profile-card-shadow: 0 24px 64px -36px rgba(6, 35, 18, 0.55),
+    0 10px 30px -18px rgba(7, 28, 40, 0.28);
+
+  --profile-photo-vignette: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.16), rgba(0,0,0,0.35));
+  --profile-photo-topfade: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255,255,255,0));
+
+  --profile-info-bg: linear-gradient(to bottom, #EEF3EE 0%, #E8EFE7 50%, #E2E6E2 100%);
+  --profile-info-text: #0F1C16;
+  --profile-name-text: #0D2418;
+  --profile-bio-text: #13281A;
+
+  --profile-badge-border: #8BB2C4;
+  --profile-badge-bg: #E3F1F7;
+  --profile-badge-text: #1F4C63;
+  --profile-badge-dot: #2E6E8E;
+
+  --profile-cta-bg: #0A5A3B;
+  --profile-cta-ring: rgba(10, 90, 59, 0.4);
+  --profile-cta-shadow: 0 12px 24px -14px rgba(6, 35, 18, 0.65);
+  --profile-icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --profile-icon-bg: #FFFFFF;
+  --profile-icon-bg-muted: rgba(255, 255, 255, 0.7);
+  --profile-icon-border: #C6D0CB;
+  --profile-icon-text: #1A3B2A;
+  --profile-icon-muted: #6E7E74;
+}
+
+/* ===== Map tokens to Tailwind utilities ===== */
+@theme {
+  /* Colors → use as bg-bg, text-main, etc. */
+  --color-bg: var(--bg);
+  --color-main: var(--main);
+  --color-main-dark: var(--main-dark);
+  --color-main-light: var(--main-light);
+  --color-textMain: var(--main-text);
+  --color-neutral: var(--neutral);
+  --color-neutralLight: var(--neutral-light);
+
+  /* Radii / sizing */
+  --radius-xl: var(--radius);
+  --container-phone: var(--container);
+
+  /* Typography sizes (use: text-logo, text-h1, …) */
+  --text-logo: 36px;
+  --text-h1: 32px;
+  --text-h3: 20px;
+  --text-h4: 16px;
+  --text-h5: 12px;
+}
+
+/* Base */
+html, body {
+  background: var(--bg);
+  color: var(--main-text);
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+}
+
+.chat-scroll .virtuoso-scroller,
+.chat-scroll [data-virtuoso-scroller] {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.chat-scroll .virtuoso-scroller::-webkit-scrollbar,
+.chat-scroll [data-virtuoso-scroller]::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.chat-footer-sticky {
+  position: sticky;
+  bottom: calc(env(safe-area-inset-bottom) + var(--keyboard-offset, 0px));
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+
+
+/* (Optional) If you later add dark mode, define tokens here
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1017;
+    --main-text: #e6eaf2;
+  }
+}
+*/
